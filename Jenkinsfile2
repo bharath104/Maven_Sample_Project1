@@ -20,6 +20,12 @@ pipeline {
                     steps {
                         bat 'java -jar target/java-project2-1.0-SNAPSHOT.jar'
                     }
-                }
+                } 
+                        stage('verify build output')
+                        {
+                        steps {
+                        bat 'dir target'
+                        }
+                        }
             }
 }
