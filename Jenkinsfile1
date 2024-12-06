@@ -1,16 +1,23 @@
 pipeline {
 	agent any
 	stages {
-		stage('build'){
+		stage('install'){
 			steps {
-				//checkout code
+				mvn install
 			}
 		} 
 		stage ('test'){
 			steps {
-				//checkout test
+						java --jar 	target/java-project2-1.0-SNAPSHOT.jar
 			}
-		}
-	} 
+	
+		 }
+		 
+					
+		
+
+ 	}  
+
+
 }
 
