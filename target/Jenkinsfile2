@@ -1,0 +1,25 @@
+pipeline {
+        agent any
+            stages {
+                stage ('validate') {
+                    steps {
+                        bat 'mvn validate'
+                    }
+                }   
+                stage ('compile') {
+                        steps {
+                            bat 'mvn compile'
+                        }
+                } 
+                stage ('test') {
+                    steps {
+                        bat 'mvn test'
+                    }
+                } 
+                stage ('install') {
+                    steps {
+                        bat 'java -jar target/java-project2-1.0-SNAPSHOT.jar'
+                    }
+                }
+            }
+         }    
