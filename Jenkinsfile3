@@ -5,6 +5,10 @@ pipeline{
                         steps {
                         sh 'building'
                         }
-                        }
+                        } 
+                                stage('package') {
+                                        steps {
+                                        sh java-project2-1.0-SNAPSHOT.jar
+
                         }
                         } 
